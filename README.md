@@ -18,3 +18,5 @@ ls out/normal
 - 训练 PR 保持打开供评审。收到评审意见后，把后续提交推送到原工作分支，并在原 PR 中回复。
 
 仓库已初始化 Codex 和 Oh My Pi 的 OpenSpec 集成。工具没有识别指令时，可在仓库根目录运行 `openspec update`，随后从该目录重开 Agent。
+
+样例为实拍照片，图片来源和许可见 [examples/SOURCES.md](examples/SOURCES.md)。
