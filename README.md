@@ -8,7 +8,7 @@ python3 image_copy.py examples/input out/normal
 ls out/normal
 ```
 
-样例目录包含两张图片和一份说明，正常运行只复制图片。可先运行 `python3 image_copy.py --help` 查看参数。
+样例目录包含三张图片和一份说明，正常运行只复制图片。可先运行 `python3 image_copy.py --help` 查看参数。
 
 ## 协作约定
 
