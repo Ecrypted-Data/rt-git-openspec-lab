@@ -16,4 +16,4 @@
 
 - [x] 3.1 运行 Issue #2 的全部场景并记录实际输出。
 - [x] 3.2 勾选任务并提交实现。
-- [ ] 3.3 推送 `fix/2-create-output-directory` 并向原仓库 `main` 提交 PR，链接 Issue #2。
+- [x] 3.3 推送 `fix/2-create-output-directory`，并在 PR #6 中链接 Issue #2。
