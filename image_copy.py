@@ -16,6 +16,8 @@ def main() -> None:
     if not args.source.is_dir():
         parser.error(f"input directory does not exist: {args.source}")
 
+    args.destination.mkdir(parents=True, exist_ok=True)
+
     for path in sorted(args.source.iterdir()):
         if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS:
             shutil.copy2(path, args.destination / path.name)
