@@ -17,3 +17,9 @@
 - [x] 3.1 运行 Issue #2 的全部场景并记录实际输出。
 - [x] 3.2 勾选任务并提交实现。
 - [x] 3.3 推送 `fix/2-create-output-directory`，并在 PR #6 中链接 Issue #2。
+
+## 边界场景验收
+
+- 2026-11-13：目标路径被普通文件占用。
+  - 复现命令：`mkdir -p /tmp/rt-issue2-collision && printf 'sentinel\n' > /tmp/rt-issue2-collision/occupied && python3 image_copy.py examples/input /tmp/rt-issue2-collision/occupied`
+  - 实际结果：退出码 `1`；`FileExistsError: [Errno 17] File exists: '/tmp/rt-issue2-collision/occupied'`；占位文件 SHA-256 前后均为 `b5f7e7d285029324d9b3acae19cc05099271454ac98bfc059a92b0581625cd51`；目录内仅 `occupied`，图片复制数 `0`。
