@@ -32,6 +32,21 @@ class OutputDirectoryTests(unittest.TestCase):
                     self.assertIn('input directory does not exist', result.stderr)
                     self.assertFalse((root/'new').exists())
 
+    def test_output_path_is_existing_file(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            dest = root/'output'
+            original = b'Keep this existing file unchanged.\x00\xff'
+            dest.write_bytes(original)
+
+            result = self.run_copy(ROOT/'examples/input', dest)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertTrue(dest.is_file())
+            self.assertEqual(dest.read_bytes(), original)
+            self.assertEqual(set(root.rglob('*')), {dest})
+            self.assertEqual(result.stdout, '')
+
     def test_empty_valid_input_creates_directory(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d); source = root/'in'; source.mkdir()

@@ -4,7 +4,7 @@
 ## ADDED Requirements
 
 ### Requirement: 准备输出目录
-工具 SHALL 在输入目录有效时按需创建指定输出目录及缺失的父目录。
+工具 SHALL 在输入目录有效时按需创建指定输出目录及缺失的父目录。输出路径被普通文件占用时，工具 SHALL 非零退出，保留原文件内容且不复制图片。
 
 #### Scenario: 指定尚不存在的多级输出目录
 - **WHEN** 运行 `python3 image_copy.py examples/input out/repro/new-output`，且 `out/repro` 尚未创建
@@ -17,3 +17,7 @@
 #### Scenario: 输入目录无效
 - **WHEN** 输入目录不存在或不是目录
 - **THEN** 保留输入错误与非零退出，不创建指定输出目录及其父目录
+
+#### Scenario: 输出路径被普通文件占用
+- **WHEN** 输入目录有效且包含支持的图片，但指定输出路径是已有普通文件
+- **THEN** 程序非零退出，原文件内容保持不变，并且没有复制出图片
