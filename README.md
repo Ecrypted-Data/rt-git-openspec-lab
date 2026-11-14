@@ -3,12 +3,11 @@
 这个工具把输入目录中的 JPG、JPEG、PNG 图片复制到指定目录，保留文件名。练习仅需要 Ubuntu、Python 3、Git 和培训文档里的 Agent 与 OpenSpec 环境。
 
 ```bash
-mkdir -p out/normal
 python3 image_copy.py examples/input out/normal
 ls out/normal
 ```
 
-样例目录包含三张图片和一份说明，正常运行只复制图片。可先运行 `python3 image_copy.py --help` 查看参数。
+样例目录包含三张图片和一份说明，正常运行只复制图片。可先运行 `python3 image_copy.py --help` 查看参数。输出目录不存在时会自动创建，包括缺失的父目录。
 
 ## 协作约定
 
