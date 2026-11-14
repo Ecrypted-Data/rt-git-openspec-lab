@@ -5,7 +5,7 @@
 - 工作分支: `feat/1-copy-result-stats`
 - 推送远端: fork `QuYunqing080529/rt-git-openspec-lab`（`origin` 保持为上游）
 - 合入目标: `Ecrypted-Data/rt-git-openspec-lab` 的 `main`（PR）
-- PR: `Closes #1`；保持打开等待评审；后续提交推送到同一分支并在原 PR 回复
+- PR: #13 https://github.com/Ecrypted-Data/rt-git-openspec-lab/pull/13（`Closes #1`；保持打开等待评审；后续提交推送到同一分支并在原 PR 回复）
 - 验证: 三条验收场景及实际输出见 `verification.md`
 
 ## 选择依据
