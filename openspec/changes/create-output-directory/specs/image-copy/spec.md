@@ -10,3 +10,7 @@
 #### Scenario: 指定已存在的输出目录
 - **WHEN** 运行时指定的输出目录已存在
 - **THEN** 工具继续正常复制支持的图片并保留文件名
+
+#### Scenario: 输出路径被普通文件占用
+- **WHEN** 运行 `python3 image_copy.py examples/input out/occupied`，且 `out/occupied` 是一个已存在的普通文件
+- **THEN** 程序以非零状态退出，该文件的内容与类型保持不变，且没有图片被复制
