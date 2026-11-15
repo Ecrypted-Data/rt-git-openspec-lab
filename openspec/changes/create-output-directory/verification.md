@@ -53,6 +53,34 @@ exit=0
 
 输出目录及缺失的父目录被创建，命令正常退出。
 
+## 场景 5：输出路径已被普通文件占用
+
+运行前在输出路径上放置普通文件，并记录内容摘要。
+
+```text
+$ printf 'keep me\n' > /tmp/rt-vision-scenario5/out-file
+$ sha256sum /tmp/rt-vision-scenario5/out-file
+2b8425c4d20e743705f4787b4dda39344b4242bc8636228a00b7d65378aa7694  /tmp/rt-vision-scenario5/out-file
+$ python3 image_copy.py examples/input /tmp/rt-vision-scenario5/out-file
+Traceback (most recent call last):
+  File "/home/taozhengzhe/rt_vision/rt-git-openspec-lab/image_copy.py", line 28, in <module>
+    main()
+  File "/home/taozhengzhe/rt_vision/rt-git-openspec-lab/image_copy.py", line 19, in main
+    args.destination.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/tmp/rt-vision-scenario5/out-file'
+exit=1
+$ sha256sum /tmp/rt-vision-scenario5/out-file
+2b8425c4d20e743705f4787b4dda39344b4242bc8636228a00b7d65378aa7694  /tmp/rt-vision-scenario5/out-file
+$ cat /tmp/rt-vision-scenario5/out-file
+keep me
+$ find /tmp/rt-vision-scenario5 -mindepth 1 -maxdepth 2 -printf '%P %y\n'
+out-file f
+```
+
+程序以 `exit=1` 非零退出；该文件摘要前后一致、内容仍为 `keep me`，目录下没有新增任何图片文件。
+
 ## 结论
 
 Issue #2 的验收场景均通过；未包含 Issue #1 的 `Copied/Skipped` 汇总变更。
