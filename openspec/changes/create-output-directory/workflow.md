@@ -7,7 +7,7 @@
 - 推送远端: Fork `buyuhai/rt-git-openspec-lab`（`origin`）
 - 合入目标: `Ecrypted-Data/rt-git-openspec-lab` 的 `main`（独立 PR）
 - OpenSpec 变更: `openspec/changes/create-output-directory/`（接续已有记录）
-- PR: 待创建（创建后回填链接和编号）
+- PR: #16 https://github.com/Ecrypted-Data/rt-git-openspec-lab/pull/16
 - 验证: 见 `verification.md`
 
 ## 选择依据
