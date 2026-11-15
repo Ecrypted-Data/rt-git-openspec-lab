@@ -5,7 +5,7 @@
 - 工作分支: `feat/1-copy-result-summary`
 - 推送远端: Fork `buyuhai/rt-git-openspec-lab`（`origin`）
 - 合入目标: `Ecrypted-Data/rt-git-openspec-lab` 的 `main`（通过 PR）
-- PR: 待创建（创建后回填链接和编号）
+- PR: #15 https://github.com/Ecrypted-Data/rt-git-openspec-lab/pull/15
 - 验证: 三条验收场景及实际输出见 `verification.md`
 
 ## 选择依据

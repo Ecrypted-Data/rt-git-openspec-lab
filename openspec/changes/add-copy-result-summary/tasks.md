@@ -13,4 +13,4 @@
 ## 3. 验收与交付
 
 - [x] 3.1 运行 Issue 三条验收场景并把实际输出写入 `verification.md`。
-- [ ] 3.2 提交并推送到 Fork，创建目标为上游 `main` 的 PR，验证：PR 正文含 `Closes #1` 且保留 OpenSpec 记录。
+- [x] 3.2 提交并推送到 Fork，创建目标为上游 `main` 的 PR，验证：PR 正文含 `Closes #1` 且保留 OpenSpec 记录。
