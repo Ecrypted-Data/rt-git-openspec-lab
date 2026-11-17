@@ -20,3 +20,8 @@
 ## Impact
 
 涉及命令行入口 `image_copy.py` 和现有样例。
+
+- 基线（决定）：从上游 `main` 的 `09fc029aabee4f109f3828f5eb465f7729336212` 起，叠加交接分支 `handoff/create-output-directory` 的 OpenSpec 提交 `211446c`（仅取 `openspec/`，不含其过时样例与 README 提交）。
+- 工作分支（决定）：`fix/2-create-output-directory`；PR 目标为上游 `main`，与 Issue #1 的 PR 独立。
+- 非目标（决定）：不改动 Issue #1 的复制日志与汇总输出。
+
